@@ -1,0 +1,19 @@
+@use './colors.scss';
+
+body {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: 'Source Code Pro';
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: 'Source Code Pro Medium';
+	src: local('Source Code Pro Medium');
+}
+
+@font-face {
+	font-family: 'Source Code Pro';
+	src: local('Source Code Pro');
+}

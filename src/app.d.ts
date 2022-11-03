@@ -7,3 +7,7 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+
+declare module '@loscrackitos/svelte-typed-js';
+declare module 'svelte-icons/io/IoLogoLinkedin.svelte';
+declare module 'svelte-icons/io/IoLogoGithub.svelte';

@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import Header from "../lib/components/Header.svelte";
+</script>
+
+<div class="page-home">
+  <Header />
+</div>
+
+<style lang="scss">
+  .page-home {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+</style>
