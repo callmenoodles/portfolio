@@ -8,6 +8,16 @@ body {
 	padding: 0;
 }
 
+::-moz-selection {
+  color: #000000;
+  background: #ffbb00;
+}
+
+::selection {
+  color: #000000;
+  background: #ffbb00;
+}
+
 @font-face {
 	font-family: 'Source Code Pro Medium';
 	src: local('Source Code Pro Medium');
@@ -16,4 +26,14 @@ body {
 @font-face {
 	font-family: 'Source Code Pro';
 	src: local('Source Code Pro');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro Regular');
+}
+
+@font-face {
+	font-family: 'Inconsolata';
+	src: local('Inconsolata');
 }

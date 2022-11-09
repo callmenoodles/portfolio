@@ -11,3 +11,4 @@ declare namespace App {
 declare module '@loscrackitos/svelte-typed-js';
 declare module 'svelte-icons/io/IoLogoLinkedin.svelte';
 declare module 'svelte-icons/io/IoLogoGithub.svelte';
+declare module 'tsparticles';

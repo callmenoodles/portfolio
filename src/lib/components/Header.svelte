@@ -5,10 +5,12 @@
 
   let titles = [
     "WEBSITES",
+    "WEB APPS",
     "VIDEO GAMES",
     "MOBILE APPS",
     "DESIGNS"
   ]
+  
 </script>
 
 <div class="header">
@@ -20,14 +22,20 @@
     </TypedJs>
   </div>
   <p class="text-description">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus similique reiciendis veniam culpa iure porro, ipsam quae tempora doloribus libero eaque odio suscipit dolorem nostrum maxime voluptate molestias voluptatem.
+    This website is mainly for showing my portfolio but I also want to use my skills to help businesses and people like you to create or update your website.
+    <br><br>
+    Interested? Have a look at my portfolio below and get in touch with me.
   </p>
   <div class="social">
     <div class="icon">
-      <IoLogoLinkedin />
+      <a href="https://www.linkedin.com/in/callmenoodles/">
+        <IoLogoLinkedin />
+      </a>
     </div>
     <div class="icon">
-      <IoLogoGithub />
+      <a href="https://github.com/callmenoodles">
+        <IoLogoGithub />
+      </a>
     </div>
   </div>
 </div>
@@ -54,7 +62,7 @@
     margin: 0;
     font-size: 5em;
     position: relative;
-    left: -5px;
+    left: -3px;
   }
 
   .text-description {
@@ -79,5 +87,16 @@
 
   .typedjs-container {
     height: 100px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 200ms;
+
+    &:hover {
+      transition-duration: 200ms;
+      color: #ffbb00;
+    }
   }
 </style>

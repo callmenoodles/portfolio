@@ -4,9 +4,12 @@
 
 <div class="navbar">
   <div class="navbar-inner">
-    <img src={logo} alt="Noodles logo">
+    <a href="/">
+      <img src={logo} alt="Noodles logo">
+    </a>
   
     <nav>
+      <a href="/">HOME</a>
       <a href="/about">ABOUT</a>
       <a href="/projects">PROJECTS</a>
       <a href="/contact">CONTACT</a>
@@ -19,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 110px;
+    height: 100px;
     width: 100vw;
     position: fixed;
   }
@@ -36,6 +39,11 @@
   }
 
   nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
     a {
       text-decoration: none;
       color: #ffffff;
@@ -46,6 +54,10 @@
       border-right: 1px solid #000000;
       transition-duration: 200ms;
       letter-spacing: 1px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         transition-duration: 200ms;
