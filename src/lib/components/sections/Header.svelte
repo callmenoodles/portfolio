@@ -10,7 +10,6 @@
     "MOBILE APPS",
     "DESIGNS"
   ]
-  
 </script>
 
 <div class="header">
@@ -18,7 +17,7 @@
   <div class="typedjs-container">
     <TypedJs strings={titles} loop=true typeSpeed={50} backSpeed={40} cursorChar='' backDelay={900}>
       <!-- svelte-ignore a11y-missing-content -->
-      <h1 class="text-title typing"></h1>
+      <h1 class="text-title typing">{titles[0]}</h1>
     </TypedJs>
   </div>
   <p class="text-description">
@@ -47,29 +46,29 @@
     
     position: relative;
     left: 20vw;
-    top: -50px;
   }
 
   .text-intro {
     margin: 0;
-    color: #606060;
+    color: #707070;
     font-size: 1.2em;
-    position: relative;
-    top: 5px;
+    font-family: 'Rubik';
   }
 
   .text-title {
     margin: 0;
     font-size: 5em;
+    font-weight: bold;
     position: relative;
     left: -3px;
   }
 
   .text-description {
-    margin: 5px 0;
-    font-size: 1em;
-    color: #606060;
+    margin: 0 0;
+    font-size: 1.2em;
+    color: #959595;
     width: 500px;
+    font-family: 'Rubik';
   }
 
   .social {

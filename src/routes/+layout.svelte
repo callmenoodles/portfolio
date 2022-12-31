@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>Noodles - Freelance Developer Portfolio</title>
+  <title>Noodles - Developer Portfolio</title>
 </svelte:head>
 
 <Navbar />

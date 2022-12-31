@@ -1,0 +1,85 @@
+<div class="footer">
+  <a class="btn-contact" href="mailto:support@noodles.services">INTERESTED?</a>
+  <nav class="footer-nav">
+    <a href="#">INTRO</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+  </nav>
+  <p class="footer-text">Developed by <a href="/" class="highlight">Noodles</a> with <a class="highlight-2" href="https://kit.svelte.dev/">SvelteKit</a>.</p>
+</div>
+
+<style lang="scss">
+  .footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .btn-contact {
+    padding: 10px 20px;
+    border: 2px solid #ffbb00;
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffbb00;
+    font-family: 'Rubik';
+    font-size: 1.25em;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition-duration: 200ms;  
+    font-weight: bold;  
+    text-decoration: none;
+
+    &:hover {
+      padding: 10px 24px;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      transition-duration: 200ms;
+    }
+  }
+
+  .footer-nav {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+    grid-template-rows: auto;
+    
+    a {
+      padding: 8px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.2em;
+      font-family: 'Rubik';
+      transition-duration: 200ms;
+
+      &:hover {
+        color: #ffbb00;
+      }
+    }
+  }
+
+  .highlight {
+    color: #ffbb00;
+    text-decoration: underline;
+  }
+
+  .highlight-2 {
+    transition-duration: 200ms;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #ff531a;
+      text-decoration: underline;
+      transition-duration: 200ms;
+    }
+  }
+
+  .footer-text {
+    margin: 0 0 20px 0;
+    font-family: 'Rubik';
+    font-size: 1.1em;
+  }
+</style>

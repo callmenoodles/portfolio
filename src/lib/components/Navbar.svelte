@@ -9,10 +9,9 @@
     </a>
   
     <nav>
-      <a href="/">HOME</a>
-      <a href="/about">ABOUT</a>
-      <a href="/projects">PROJECTS</a>
-      <a href="/contact">CONTACT</a>
+      <a href="#about">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
     </nav>
   </div>
 </div>
@@ -24,7 +23,8 @@
     align-items: center;
     height: 100px;
     width: 100vw;
-    position: fixed;
+    position: absolute;
+    z-index: 100;
   }
 
   .navbar-inner {
@@ -60,9 +60,7 @@
       align-items: center;
 
       &:hover {
-        transition-duration: 200ms;
-        border-left: 1px solid #ffbb00;
-        border-right: 1px solid #ffbb00;
+        color: #ffbb00;
       }
     }
   }
