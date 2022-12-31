@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Skill from "../Skill.svelte";
 
-
   interface Skill {
     title: string;
     description?: string;
