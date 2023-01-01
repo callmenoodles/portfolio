@@ -66,7 +66,7 @@
   .text-description {
     margin: 0 0;
     font-size: 1.2em;
-    color: #959595;
+    color: $lightgrey;
     width: 500px;
     font-family: 'Rubik';
   }
@@ -90,12 +90,12 @@
 
   a {
     text-decoration: none;
-    color: white;
+    color: $white;
     transition-duration: 200ms;
 
     &:hover {
       transition-duration: 200ms;
-      color: #ffbb00;
+      color: $primary;
     }
   }
 </style>

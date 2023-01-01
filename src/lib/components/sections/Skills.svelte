@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Skill from "../Skill.svelte";
+  import Saos from "saos";
 
   interface Skill {
     title: string;
@@ -55,15 +56,31 @@
   </div>
   <div class="skill-container">
     {#each skills as skill, i}
-      <Skill 
-        title={skill.title}
-        description={skill.description}
-        isHead={i < 3} />
+      {#if i == 0}
+        <Saos animation={"slide-in-right 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+          <Skill
+            title={skill.title}
+            description={skill.description}
+            isHead={i < 3} />
+        </Saos>  
+      {:else if i == 2}
+        <Saos animation={"slide-in-left 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+          <Skill
+            title={skill.title}
+            description={skill.description}
+            isHead={i < 3} />
+        </Saos>
+      {:else}
+        <Skill
+          title={skill.title}
+          description={skill.description}
+          isHead={i < 3} />
+      {/if}
     {/each}
   </div>
   <div class="subskill-container">
-    {#each subskills as skill}
-      <Skill 
+    {#each subskills as skill}  
+    <Skill 
         title={skill.title}
         description={""}
         isHead={false} />
@@ -72,6 +89,33 @@
 </div>
 
 <style lang="scss">
+  @keyframes -global-slide-in-left {
+    0% {
+      transform: translateX(100px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes -global-slide-in-right {
+    0% {
+      transform: translateX(-100px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes -global-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .skills {
     width: 100vw;
     display: flex;
@@ -92,7 +136,7 @@
 
     .section-description {
       margin: 0;
-      color: #959595;
+      color: $lightgrey;
       width: 500px;
       text-align: center;
     }
@@ -115,7 +159,7 @@
   .section-underline {
     width: 70px;
     height: 1px;
-    background-color: #ffbb00;
+    background-color: $primary;
     margin: 0 0 20px 0;
   }
 </style>

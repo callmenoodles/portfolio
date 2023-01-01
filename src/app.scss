@@ -1,8 +1,8 @@
 @import './colors.scss';
 
 body {
-	background-color: #000000;
-	color: #ffffff;
+	background-color: $black;
+	color: $white;
 	font-family: 'Rubik';
 	margin: 0;
 	padding: 0;
@@ -13,13 +13,13 @@ body {
 }
 
 ::-moz-selection {
-  color: #000000;
-  background: #ffbb00;
+  color: $black;
+  background: $primary;
 }
 
 ::selection {
-  color: #000000;
-  background: #ffbb00;
+  color: $black;
+  background: $primary;
 }
 
 @font-face {

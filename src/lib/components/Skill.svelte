@@ -23,7 +23,7 @@
     height: 60px;
     font-size: 0.9em;
     flex: 1 1 auto;
-    background-color: #101010;
+    background-color: $darkgrey;
   }
 
   .skill {
@@ -52,7 +52,7 @@
   .skill-description {
     margin: 5px 0;
     font-family: 'Rubik';
-    color: #959595;
+    color: $lightgrey;
     text-align: left;
   }
 </style>

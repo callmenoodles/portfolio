@@ -51,12 +51,12 @@
 
     a {
       text-decoration: none;
-      color: #ffffff;
+      color: $white;
       margin: 0 8px;
       font-size: 1.1em;
       padding: 0 10px;
-      border-left: 1px solid #000000;
-      border-right: 1px solid #000000;
+      border-left: 1px solid $black;
+      border-right: 1px solid $black;
       transition-duration: 200ms;
       letter-spacing: 1px;
       display: flex;
@@ -65,7 +65,7 @@
       align-items: center;
 
       &:hover {
-        color: #ffbb00;
+        color: $primary;
       }
     }
   }

@@ -11,7 +11,11 @@
   </div>
   <p class="tools">
     {#each tools as tool, i}
+    {#if i == tools.length - 1}
       {`${tool}`}
+    {:else}
+      {`${tool}, `}
+    {/if}
     {/each}
   </p>
 </div>
@@ -27,13 +31,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #101010;
+    background-color: $darkgrey;
     border-radius: 8px;
     transition-duration: 0.5s;
     border: 1px solid black;
 
     &:hover {
-      border: 1px solid #ffbb00;
+      border: 1px solid $primary;
       transition-duration: 200ms;
     }
 
@@ -54,7 +58,7 @@
   .project-description {
     margin: 5px 0;
     font-family: 'Rubik';
-    color: #959595;
+    color: $lightgrey;
     text-align: center;
   }
 </style>

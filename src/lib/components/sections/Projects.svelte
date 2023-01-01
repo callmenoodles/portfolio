@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Project from "../Project.svelte";
+  import Saos from 'saos';
 
   interface Project {
     title: string;
@@ -9,7 +10,7 @@
 
   let projects: Array<Project> = [
     { title: "Mag Ik Dit Delen?", description: "Sample description for a project. Sample description for a project. Sample description for a project.", tools: ["React"] },
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
+    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React", "Svelte"] },
     { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
     { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
     { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
@@ -22,15 +23,26 @@
   <div class="section-underline"></div>
   <div class="project-container">
     {#each projects as project}
-      <Project
-        title={project.title}
-        description={project.description}
-        tools={project.tools} />
+      <Saos animation={"scale-in-center 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+        <Project
+          title={project.title}
+          description={project.description}
+          tools={project.tools} />
+      </Saos>        
     {/each}
   </div>
 </div>
 
 <style lang="scss">
+  @keyframes -global-scale-in-center {
+    0% {
+      transform: scale(0.75);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }
+
   .projects {
     width: 100vw;
     display: flex;
@@ -58,7 +70,7 @@
   .section-underline {
     width: 100px;
     height: 1px;
-    background-color: #ffbb00;
+    background-color: $primary;
     margin: 0 0 20px 0;
     margin-bottom: 50px;
   }

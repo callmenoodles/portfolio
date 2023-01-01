@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { scrollTo, scrollTop } from 'svelte-scrolling';
+  import { scrollTo } from 'svelte-scrolling';
   import { expoOut } from 'svelte/easing';
 </script>
 
@@ -27,10 +27,10 @@
 
   .btn-contact {
     padding: 10px 20px;
-    border: 2px solid #ffbb00;
+    border: 2px solid $primary;
     border-radius: 8px;
-    background-color: #000000;
-    color: #ffbb00;
+    background-color: $black;
+    color: $primary;
     font-family: 'Rubik';
     font-size: 1.25em;
     letter-spacing: 3px;
@@ -42,7 +42,7 @@
     &:hover {
       padding: 10px 24px;
       background-color: black;
-      color: white;
+      color: $white;
       border: 2px solid white;
       transition-duration: 200ms;
     }
@@ -57,26 +57,26 @@
     a {
       padding: 8px;
       text-decoration: none;
-      color: white;
+      color: $white;
       font-size: 1.2em;
       font-family: 'Rubik';
       transition-duration: 200ms;
 
       &:hover {
-        color: #ffbb00;
+        color: $primary;
       }
     }
   }
 
   .highlight {
-    color: #ffbb00;
+    color: $primary;
     text-decoration: underline;
   }
 
   .highlight-2 {
     transition-duration: 200ms;
     text-decoration: none;
-    color: white;
+    color: $white;
 
     &:hover {
       color: #ff531a;
