@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { scrollTo } from 'svelte-scrolling';
+  import { expoOut } from 'svelte/easing';
   const logo = "../../images/noodles.png";
 </script>
 
@@ -9,9 +11,12 @@
     </a>
   
     <nav>
-      <a href="#about">SKILLS</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#contact">CONTACT</a>
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <a use:scrollTo={{ ref: 'skills', duration: 1000, offset: -100, easing: expoOut }}>SKILLS</a>
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <a use:scrollTo={{ ref: 'projects', duration: 1000, offset: -100, easing: expoOut }}>PROJECTS</a>
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <a use:scrollTo={{ ref: 'contact', duration: 1000, offset: -100, easing: expoOut }}>CONTACT</a>
     </nav>
   </div>
 </div>

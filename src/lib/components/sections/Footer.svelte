@@ -1,9 +1,17 @@
+<script lang="ts">
+  import { scrollTo, scrollTop } from 'svelte-scrolling';
+  import { expoOut } from 'svelte/easing';
+</script>
+
 <div class="footer">
   <a class="btn-contact" href="mailto:support@noodles.services">INTERESTED?</a>
   <nav class="footer-nav">
-    <a href="#">INTRO</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#projects">PROJECTS</a>
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a use:scrollTo={{ ref: 'header', duration: 1000, offset: -0, easing: expoOut }}>INTRO</a>
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a use:scrollTo={{ ref: 'skills', duration: 1000, offset: -100, easing: expoOut }}>SKILLS</a>
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a use:scrollTo={{ ref: 'projects', duration: 1000, offset: -100, easing: expoOut }}>PROJECTS</a>
   </nav>
   <p class="footer-text">Developed by <a href="/" class="highlight">Noodles</a> with <a class="highlight-2" href="https://kit.svelte.dev/">SvelteKit</a>.</p>
 </div>
