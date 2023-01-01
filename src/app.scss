@@ -1,20 +1,15 @@
 @import './colors.scss';
 
 body {
-	background-color: $black;
-	color: $white;
-	font-family: 'Rubik';
-	margin: 0;
-	padding: 0;
+  background-color: $black;
+  color: $white;
+  font-family: 'Rubik';
+  margin: 0;
+  padding: 0;
 }
 
 .section-title {
-	font-size: 2em;
-}
-
-::-moz-selection {
-  color: $black;
-  background: $primary;
+  font-size: 2em;
 }
 
 ::selection {
@@ -22,42 +17,17 @@ body {
   background: $primary;
 }
 
-@font-face {
-	font-family: 'Source Code Pro Medium';
-	src: local('Source Code Pro Medium');
+::-moz-selection {
+  color: $black;
+  background: $primary;
 }
 
 @font-face {
-	font-family: 'Source Code Pro';
-	src: local('Source Code Pro');
+  font-family: 'Source Code Pro';
+  src: local('Source Code Pro');
 }
 
 @font-face {
-	font-family: 'Source Sans Pro';
-	src: local('Source Sans Pro Regular');
-}
-
-@font-face {
-	font-family: 'Inconsolata';
-	src: local('Inconsolata');
-}
-
-@font-face {
-	font-family: 'Rubik';
-	src: url('/fonts/rubik/static/Rubik-Regular.ttf');
-}
-
-@font-face {
-	font-family: 'Mulish';
-	src: url('/fonts/mulish/static/Mulishcd-Regular.ttf');
-}
-
-@font-face {
-	font-family: 'Ubuntu';
-	src: url('/fonts/ubuntu/Ubuntu-Regular.ttf');
-}
-
-@font-face {
-	font-family: 'Noto Sans';
-	src: url('/fonts/noto-sans/NotoSans-Regular.ttf');
+  font-family: 'Rubik';
+  src: url('/fonts/rubik/static/Rubik-Regular.ttf');
 }

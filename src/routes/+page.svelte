@@ -4,9 +4,12 @@
   import Projects from "$lib/components/sections/Projects.svelte";
 	import Skills from "$lib/components/sections/Skills.svelte";
   import Header from "../lib/components/sections/Header.svelte";
+    import Navbar from '$lib/components/Navbar.svelte';
 </script>
 
 <div>
+  <Navbar />
+  
   <div class="section header" use:scrollRef={'header'}>
     <Header />
   </div>

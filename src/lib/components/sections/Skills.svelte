@@ -56,31 +56,31 @@
   </div>
   <div class="skill-container">
     {#each skills as skill, i}
-      {#if i == 0}
-        <Saos animation={"slide-in-right 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
-          <Skill
-            title={skill.title}
-            description={skill.description}
-            isHead={i < 3} />
-        </Saos>  
-      {:else if i == 2}
-        <Saos animation={"slide-in-left 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
-          <Skill
-            title={skill.title}
-            description={skill.description}
-            isHead={i < 3} />
-        </Saos>
-      {:else}
+    {#if i == 0}
+      <Saos animation={"slide-in-right 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
         <Skill
           title={skill.title}
           description={skill.description}
           isHead={i < 3} />
-      {/if}
+      </Saos>  
+    {:else if i == 2}
+      <Saos animation={"slide-in-left 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+        <Skill
+          title={skill.title}
+          description={skill.description}
+          isHead={i < 3} />
+      </Saos>
+    {:else}
+      <Skill
+        title={skill.title}
+        description={skill.description}
+        isHead={i < 3} />
+    {/if}
     {/each}
   </div>
   <div class="subskill-container">
     {#each subskills as skill}  
-    <Skill 
+      <Skill 
         title={skill.title}
         description={""}
         isHead={false} />
