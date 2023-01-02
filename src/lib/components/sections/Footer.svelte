@@ -27,7 +27,7 @@
 
   .btn-contact {
     padding: 10px 20px;
-    border: 2px solid $primary;
+    border: 1px solid $primary;
     border-radius: 8px;
     background-color: $black;
     color: $primary;
@@ -36,14 +36,14 @@
     letter-spacing: 3px;
     cursor: pointer;
     transition-duration: 200ms;  
-    font-weight: bold;  
+    font-weight: normal;  
     text-decoration: none;
 
     &:hover {
       padding: 10px 24px;
       background-color: black;
       color: $white;
-      border: 2px solid white;
+      border: 1px solid white;
       transition-duration: 200ms;
     }
   }
@@ -72,6 +72,7 @@
       color: $white;
       font-size: 1.2em;
       font-family: 'Rubik';
+      font-weight: normal;
       transition-duration: 200ms;
 
       &:hover {

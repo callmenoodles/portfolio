@@ -20,9 +20,9 @@
     </TypedJs>
   </div>
   <p class="text-description">
-    This website is mainly for showing my portfolio but I also want to use my skills to help businesses and people like you to create or update your website.
+    Welcome to my portfolio! You can find my best projects and the services I provide to help businesses and people like you to create a website or application.
     <br><br>
-    Interested? Have a look at my portfolio below and get in touch with me.
+    Interested? Have a look at my portfolio below and feel free to contact me at <a href="mailto:support@noodles.services" class="email">support@noodles.services</a>.
   </p>
   <div class="social">
     <div class="icon">
@@ -54,6 +54,11 @@
       left: 0;
       width: 75%;
     }
+  }
+
+  .email {
+    text-decoration: underline;
+    color: $lightgrey;
   }
 
   .text-intro {
