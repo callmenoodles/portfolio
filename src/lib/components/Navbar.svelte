@@ -3,24 +3,24 @@
   import { expoOut } from 'svelte/easing';
   import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
   import IoMdClose from 'svelte-icons/io/IoMdClose.svelte';
-  const logo = "../../images/noodles.png";
+  const logo = '../../images/noodles.png';
 
   let isOpen = false;
 
   function toggleMenu() {
-    isOpen = !isOpen; 
+    isOpen = !isOpen;
   }
 
   setGlobalOptions({
     duration: 1000,
     easing: expoOut
-  })
+  });
 </script>
 
 <div class="navbar">
   <div class="navbar-inner">
     <a href="/">
-      <img src={logo} alt="Noodles logo">
+      <img src={logo} alt="Noodles logo" />
     </a>
 
     <nav class="navigation">
@@ -31,7 +31,7 @@
       <!-- svelte-ignore a11y-missing-attribute -->
       <a use:scrollTo={{ ref: 'contact', offset: -100 }}>CONTACT</a>
     </nav>
-    
+
     <div class="icon" on:click={toggleMenu}>
       {#if isOpen}
         <IoMdClose />
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class={`overlay ${isOpen && "visible"}`}>
+  <div class={`overlay ${isOpen && 'visible'}`}>
     <nav class="mobile-navigation">
       <!-- svelte-ignore a11y-missing-attribute -->
       <a on:click={toggleMenu} use:scrollTo={{ ref: 'skills', offset: -25 }}>SKILLS</a>
@@ -109,7 +109,7 @@
     justify-content: space-between;
     width: 80%;
   }
-  
+
   img {
     width: 35px;
   }

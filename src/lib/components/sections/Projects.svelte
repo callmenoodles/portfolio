@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Project from "../Project.svelte";
+  import Project from '../Project.svelte';
   import Saos from 'saos';
   import { pb } from '../../../pocketbase';
-    import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   interface Project {
     title: string;
@@ -10,7 +10,7 @@
     tools: Array<string>;
   }
 
-  let projects: Array<Project> = []
+  let projects: Array<Project> = [];
 
   onMount(async () => {
     projects = await fetchProjects();
@@ -19,12 +19,12 @@
   async function fetchProjects() {
     let res = await pb.collection('projects').getFullList();
 
-    let projects = res.map(project => {
+    let projects = res.map((project) => {
       return {
         name: project.name,
         description: project.description,
         tools: project.tools
-      } as unknown as Project
+      } as unknown as Project;
     });
 
     return projects;
@@ -33,15 +33,12 @@
 
 <div class="projects">
   <h1 class="section-title">PROJECTS</h1>
-  <div class="section-underline"></div>
+  <div class="section-underline" />
   <div class="project-container">
     {#each projects as project}
-      <Saos animation={"scale-in-center 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
-        <Project
-          title={project.name}
-          description={project.description}
-          tools={project.tools} />
-      </Saos>        
+      <Saos animation={'scale-in-center 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+        <Project title={project.name} description={project.description} tools={project.tools} />
+      </Saos>
     {/each}
   </div>
 </div>
@@ -52,7 +49,7 @@
       transform: scale(0.75);
     }
     100% {
-      transform: scale(1.0);
+      transform: scale(1);
     }
   }
 
@@ -77,7 +74,7 @@
     @media screen and (min-width: 1250px) {
       width: 1200px;
     }
-    
+
     grid-template-columns: repeat(auto-fill, minmax(340px, 340px));
   }
 

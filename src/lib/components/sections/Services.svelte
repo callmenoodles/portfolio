@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Skill from "../Skill.svelte";
-  import Service from "../Service.svelte";
-  import Saos from "saos";
+  import Skill from '../Skill.svelte';
+  import Service from '../Service.svelte';
+  import Saos from 'saos';
   import { pb } from '../../../pocketbase';
-    import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   interface Skill {
     title: string;
@@ -25,11 +25,11 @@
   async function fetchServices() {
     let res = await pb.collection('services').getFullList();
 
-    let services = res.map(service => {
+    let services = res.map((service) => {
       return {
         name: service.name,
-        description: service.description,
-      } as unknown as Service
+        description: service.description
+      } as unknown as Service;
     });
 
     return services;
@@ -38,46 +38,40 @@
   async function fetchSkills() {
     let res = await pb.collection('skills').getFullList();
 
-    let skills = res.map(skill => {
+    let skills = res.map((skill) => {
       return {
         name: skill.name,
-        description: skill.description,
-      } as unknown as Skill
+        description: skill.description
+      } as unknown as Skill;
     });
 
     return skills;
   }
-
 </script>
 
 <div class="skills">
   <div class="skills-container">
     <div class="section-info">
       <h1 class="section-title">SERVICES & SKILLS</h1>
-      <div class="section-underline"></div>
+      <div class="section-underline" />
       <p class="section-description">
-        I have a wide variety of skills backed by real-world experience and my eagerness to learn, to help you or your business.
+        I have a wide variety of skills backed by real-world experience and my eagerness to learn,
+        to help you or your business.
       </p>
     </div>
     <div class="skill-container">
       {#each services as service, i}
-      {#if i == 0}
-        <Saos animation={"slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
-          <Service
-            title={service.name}
-            description={service.description} />
-        </Saos>
-      {:else if i == 2}
-        <Saos animation={"slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
-          <Service
-            title={service.name}
-            description={service.description} />
-        </Saos>
-      {:else}
-        <Service
-          title={service.name}
-          description={service.description} />
-      {/if}
+        {#if i == 0}
+          <Saos animation={'slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+            <Service title={service.name} description={service.description} />
+          </Saos>
+        {:else if i == 2}
+          <Saos animation={'slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+            <Service title={service.name} description={service.description} />
+          </Saos>
+        {:else}
+          <Service title={service.name} description={service.description} />
+        {/if}
       {/each}
     </div>
 
@@ -174,7 +168,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px; 
+    gap: 16px;
     margin-top: 16px;
   }
 

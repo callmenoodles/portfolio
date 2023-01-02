@@ -1,28 +1,32 @@
 <script lang="ts">
   import IoLogoLinkedin from 'svelte-icons/io/IoLogoLinkedin.svelte';
-  import IoLogoGithub from 'svelte-icons/io/IoLogoGithub.svelte'
+  import IoLogoGithub from 'svelte-icons/io/IoLogoGithub.svelte';
   import TypedJs from '@loscrackitos/svelte-typed-js';
 
-  let titles = [
-    "WEBSITES",
-    "WEB APPS",
-    "VIDEO GAMES",
-    "MOBILE APPS"
-  ]
+  let titles = ['WEBSITES', 'WEB APPS', 'VIDEO GAMES', 'MOBILE APPS'];
 </script>
 
 <div class="header">
   <p class="text-intro">I GO BY NOODLES AND I CREATE</p>
   <div class="typedjs-container">
-    <TypedJs strings={titles} loop=true typeSpeed={50} backSpeed={40} showCursor={false} backDelay={900}>
+    <TypedJs
+      strings={titles}
+      loop="true"
+      typeSpeed={50}
+      backSpeed={40}
+      showCursor={false}
+      backDelay={900}
+    >
       <!-- svelte-ignore a11y-missing-content -->
-      <h1 class="text-title typing"></h1>
+      <h1 class="text-title typing" />
     </TypedJs>
   </div>
   <p class="text-description">
-    Welcome to my portfolio! You can find my best projects and the services I provide to help businesses and people like you to create a website or application.
-    <br><br>
-    Interested? Have a look at my portfolio below and feel free to contact me at <a href="mailto:support@noodles.services" class="email">support@noodles.services</a>.
+    Welcome to my portfolio! You can find my best projects and the services I provide to help
+    businesses and people like you to create a website or application.
+    <br /><br />
+    Interested? Have a look at my portfolio below and feel free to contact me at
+    <a href="mailto:support@noodles.services" class="email">support@noodles.services</a>.
   </p>
   <div class="social">
     <div class="icon">

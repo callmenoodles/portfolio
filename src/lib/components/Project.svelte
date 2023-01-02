@@ -1,6 +1,6 @@
 <script lang="ts">
   export let title: string;
-  export let description: string; 
+  export let description: string;
   export let tools: Array<string>;
 </script>
 
@@ -11,11 +11,11 @@
   </div>
   <p class="tools">
     {#each tools as tool, i}
-    {#if i == tools.length - 1}
-      {`${tool}`}
-    {:else}
-      {`${tool}, `}
-    {/if}
+      {#if i == tools.length - 1}
+        {`${tool}`}
+      {:else}
+        {`${tool}, `}
+      {/if}
     {/each}
   </p>
 </div>

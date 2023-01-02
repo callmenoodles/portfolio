@@ -1,15 +1,15 @@
 <script>
-  import { scrollRef } from 'svelte-scrolling'
-  import Footer from "$lib/components/sections/Footer.svelte";
-  import Projects from "$lib/components/sections/Projects.svelte";
-	import Skills from "$lib/components/sections/Services.svelte";
-  import Header from "../lib/components/sections/Header.svelte";
-    import Navbar from '$lib/components/Navbar.svelte';
+  import { scrollRef } from 'svelte-scrolling';
+  import Footer from '$lib/components/sections/Footer.svelte';
+  import Projects from '$lib/components/sections/Projects.svelte';
+  import Skills from '$lib/components/sections/Services.svelte';
+  import Header from '../lib/components/sections/Header.svelte';
+  import Navbar from '$lib/components/Navbar.svelte';
 </script>
 
 <div>
   <Navbar />
-  
+
   <div class="section sec-header" use:scrollRef={'header'}>
     <Header />
   </div>

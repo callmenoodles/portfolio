@@ -11,9 +11,13 @@
     <!-- svelte-ignore a11y-missing-attribute -->
     <a use:scrollTo={{ ref: 'skills', duration: 1000, offset: -100, easing: expoOut }}>SKILLS</a>
     <!-- svelte-ignore a11y-missing-attribute -->
-    <a use:scrollTo={{ ref: 'projects', duration: 1000, offset: -100, easing: expoOut }}>PROJECTS</a>
+    <a use:scrollTo={{ ref: 'projects', duration: 1000, offset: -100, easing: expoOut }}>PROJECTS</a
+    >
   </nav>
-  <p class="footer-text">Developed by <a href="/" class="highlight">Noodles</a> with <a class="highlight-2" href="https://kit.svelte.dev/">SvelteKit</a>.</p>
+  <p class="footer-text">
+    Developed by <a href="/" class="highlight">Noodles</a> with
+    <a class="highlight-2" href="https://kit.svelte.dev/">SvelteKit</a>.
+  </p>
 </div>
 
 <style lang="scss">
@@ -35,8 +39,8 @@
     font-size: 1.25em;
     letter-spacing: 3px;
     cursor: pointer;
-    transition-duration: 200ms;  
-    font-weight: normal;  
+    transition-duration: 200ms;
+    font-weight: normal;
     text-decoration: none;
 
     &:hover {
