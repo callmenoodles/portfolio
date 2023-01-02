@@ -1,49 +1,48 @@
 <script lang="ts">
 	import Skill from "../Skill.svelte";
   import Saos from "saos";
+  import { pb } from '../../../pocketbase';
+    import { onMount } from "svelte";
 
   interface Skill {
     title: string;
     description?: string;
   }
 
-  let skills: Array<Skill> = [
-    {
-      title: "Web Development",
-      description: "I have years of experience building web applications using React, Express, and MongoDB.",
-    },
-    {
-      title: "Software Engineering",
-      description: "Designing the technical aspects of a program is an essential skill when building medium to large sized projects.",
-    },
-    {
-      title: "Mobile Development",
-      description: "I have experience developing mobile apps using Flutter and Dart.",
-    }
-  ]
+  let skills: Array<Skill> = [];
+  let subskills: Array<Skill> = [];
 
-  let subskills: Array<Skill> = [
-    { title: "Git" },
-    { title: "Linux" },
-    { title: "Web Hosting" },
-    { title: "Unity" },
-    { title: "Game Development" },
-    { title: "Git" },
-    { title: "Linux" },
-    { title: "Web Hosting" },
-    { title: "Unity" },
-    { title: "Game Development" },
-    { title: "Git" },
-    { title: "Linux" },
-    { title: "Web Hosting" },
-    { title: "Unity" },
-    { title: "Game Development" },
-    { title: "Git" },
-    { title: "Linux" },
-    { title: "Web Hosting" },
-    { title: "Unity" },
-    { title: "Game Development" },
-  ]
+  onMount(async () => {
+    skills = await fetchSkills();
+    subskills = await fetchSubskills();
+  });
+
+  async function fetchSkills() {
+    let res = await pb.collection('skills').getFullList();
+
+    let skills = res.map(skill => {
+      return {
+        name: skill.name,
+        description: skill.description,
+      } as unknown as Skill
+    });
+
+    return skills;
+  }
+
+  async function fetchSubskills() {
+    let res = await pb.collection('subskills').getFullList();
+
+    let subskills = res.map(subskill => {
+      return {
+        name: subskill.name,
+        description: subskill.description,
+      } as unknown as Skill
+    });
+
+    return subskills;
+  }
+
 </script>
 
 <div class="skills">
@@ -60,20 +59,20 @@
       {#if i == 0}
         <Saos animation={"slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
           <Skill
-            title={skill.title}
+            title={skill.name}
             description={skill.description}
             isHead={i < 3} />
         </Saos>
       {:else if i == 2}
         <Saos animation={"slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
           <Skill
-            title={skill.title}
+            title={skill.name}
             description={skill.description}
             isHead={i < 3} />
         </Saos>
       {:else}
         <Skill
-          title={skill.title}
+          title={skill.name}
           description={skill.description}
           isHead={i < 3} />
       {/if}
@@ -83,7 +82,7 @@
     <div class="subskill-container">
       {#each subskills as skill}
         <Skill
-          title={skill.title}
+          title={skill.name}
           description={""}
           isHead={false} />
       {/each}

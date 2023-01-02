@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Project from "../Project.svelte";
   import Saos from 'saos';
+  import { pb } from '../../../pocketbase';
+    import { onMount } from "svelte";
 
   interface Project {
     title: string;
@@ -8,14 +10,25 @@
     tools: Array<string>;
   }
 
-  let projects: Array<Project> = [
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project. Sample description for a project. Sample description for a project.", tools: ["React"] },
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React", "Svelte"] },
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] },
-    { title: "Mag Ik Dit Delen?", description: "Sample description for a project.", tools: ["React"] }
-  ]
+  let projects: Array<Project> = []
+
+  onMount(async () => {
+    projects = await fetchProjects();
+  });
+
+  async function fetchProjects() {
+    let res = await pb.collection('projects').getFullList();
+
+    let projects = res.map(project => {
+      return {
+        name: project.name,
+        description: project.description,
+        tools: project.tools
+      } as unknown as Project
+    });
+
+    return projects;
+  }
 </script>
 
 <div class="projects">
@@ -25,7 +38,7 @@
     {#each projects as project}
       <Saos animation={"scale-in-center 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
         <Project
-          title={project.title}
+          title={project.name}
           description={project.description}
           tools={project.tools} />
       </Saos>        

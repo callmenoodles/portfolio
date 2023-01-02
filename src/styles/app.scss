@@ -1,0 +1,34 @@
+@import './colors.scss';
+
+body {
+  background-color: $black;
+  color: $white;
+  font-family: 'Rubik';
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.section-title {
+  font-size: 2em;
+}
+
+::selection {
+  color: $black;
+  background: $primary;
+}
+
+::-moz-selection {
+  color: $black;
+  background: $primary;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: local('Source Code Pro');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('/fonts/rubik/static/Rubik-Regular.ttf');
+}
