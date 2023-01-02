@@ -1,27 +1,33 @@
 <script lang="ts">
   export let title: string;
+  export let description: string; 
 </script>
 
-<div class="skill">
-  <div class="skill-info">
-    <h2 class="skill-title">{title}</h2>
+<div class="service">
+  <div class="service-info">
+    <h2 class="service-title">{title}</h2>
+    <p class="service-description">{description}</p>
   </div>
 </div>
 
 <style lang="scss">
-  .skill {
+  .service {
     transition-duration: 500ms;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 8px;
-    height: 60px;
-    font-size: 0.9em;
-    flex: 1 1 auto;
-    align-items: center;
-    background-color: $darkgrey;
+    height: 180px;
+    border: 1px solid #505050;
+    width: 100%;
+    min-width: 300px;
+    align-items: left;
 
-    .skill-info {
+    @media screen and (max-width: 1000px) and (min-width: 700px) {
+      height: 150px;
+    }
+
+    .service-info {
       padding: 28px;
       display: flex;
       flex-direction: column;
@@ -30,14 +36,14 @@
     }
   }
 
-  .skill-title {
+  .service-title {
     margin: 5px 0;
     font-family: 'Rubik';
     font-size: 1.2em;
     text-align: center;
   }
 
-  .skill-description {
+  .service-description {
     margin: 5px 0;
     font-family: 'Rubik';
     color: $lightgrey;

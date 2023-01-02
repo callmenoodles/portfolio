@@ -14,9 +14,9 @@
 <div class="header">
   <p class="text-intro">I GO BY NOODLES AND I CREATE</p>
   <div class="typedjs-container">
-    <TypedJs strings={titles} loop=true typeSpeed={50} backSpeed={40} cursorChar='' backDelay={900}>
+    <TypedJs strings={titles} loop=true typeSpeed={50} backSpeed={40} showCursor={false} backDelay={900}>
       <!-- svelte-ignore a11y-missing-content -->
-      <h1 class="text-title typing">{titles[0]}</h1>
+      <h1 class="text-title typing"></h1>
     </TypedJs>
   </div>
   <p class="text-description">
@@ -53,23 +53,17 @@
     @media screen and (max-width: 700px) {
       left: 0;
       width: 75%;
-      position: relative;
-      top: 30vh;
     }
   }
 
   .text-intro {
     margin: 0;
-    color: #707070;
+    color: $lightgrey;
     font-size: 1.2em;
     font-family: 'Rubik';
 
     @media screen and (max-width: 1000px) {
       font-size: 1.1em;
-    }
-
-    @media screen and (max-width: 700px) {
-      // font-size: 1.0em;
     }
   }
 
@@ -103,10 +97,6 @@
 
     @media screen and (max-width: 1000px) {
       font-size: 1.1em;
-    }
-
-    @media screen and (max-width: 700px) {
-      // font-size: 1.0em;
     }
   }
 

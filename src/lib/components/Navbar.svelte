@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { scrollTo } from 'svelte-scrolling';
+  import { scrollTo, setGlobalOptions } from 'svelte-scrolling';
   import { expoOut } from 'svelte/easing';
-  import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte'; 
+  import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
+  import IoMdClose from 'svelte-icons/io/IoMdClose.svelte';
   const logo = "../../images/noodles.png";
 
   let isOpen = false;
@@ -9,6 +10,11 @@
   function toggleMenu() {
     isOpen = !isOpen; 
   }
+
+  setGlobalOptions({
+    duration: 1000,
+    easing: expoOut
+  })
 </script>
 
 <div class="navbar">
@@ -19,26 +25,30 @@
 
     <nav class="navigation">
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a use:scrollTo={{ ref: 'skills', duration: 1000, offset: -100, easing: expoOut }}>SKILLS</a>
+      <a use:scrollTo={{ ref: 'skills', offset: -100 }}>SKILLS</a>
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a use:scrollTo={{ ref: 'projects', duration: 1000, offset: -100, easing: expoOut }}>PROJECTS</a>
+      <a use:scrollTo={{ ref: 'projects', offset: -100 }}>PROJECTS</a>
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a use:scrollTo={{ ref: 'contact', duration: 1000, offset: -100, easing: expoOut }}>CONTACT</a>
+      <a use:scrollTo={{ ref: 'contact', offset: -100 }}>CONTACT</a>
     </nav>
     
     <div class="icon" on:click={toggleMenu}>
-      <IoMdMenu />
+      {#if isOpen}
+        <IoMdClose />
+      {:else}
+        <IoMdMenu />
+      {/if}
     </div>
   </div>
 
   <div class={`overlay ${isOpen && "visible"}`}>
     <nav class="mobile-navigation">
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a on:click={toggleMenu} use:scrollTo={{ ref: 'skills', duration: 1000, offset: -100, easing: expoOut }}>SKILLS</a>
+      <a on:click={toggleMenu} use:scrollTo={{ ref: 'skills', offset: -25 }}>SKILLS</a>
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a on:click={toggleMenu} use:scrollTo={{ ref: 'projects', duration: 1000, offset: -100, easing: expoOut }}>PROJECTS</a>
+      <a on:click={toggleMenu} use:scrollTo={{ ref: 'projects', offset: -25 }}>PROJECTS</a>
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a on:click={toggleMenu} use:scrollTo={{ ref: 'contact', duration: 1000, offset: -100, easing: expoOut }}>CONTACT</a>
+      <a on:click={toggleMenu} use:scrollTo={{ ref: 'contact', offset: -25 }}>CONTACT</a>
     </nav>
   </div>
 </div>
@@ -120,8 +130,6 @@
       margin: 0 8px;
       font-size: 1.1em;
       padding: 0 10px;
-      border-left: 1px solid $black;
-      border-right: 1px solid $black;
       transition-duration: 200ms;
       letter-spacing: 1px;
       display: flex;

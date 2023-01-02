@@ -2,7 +2,7 @@
   import { scrollRef } from 'svelte-scrolling'
   import Footer from "$lib/components/sections/Footer.svelte";
   import Projects from "$lib/components/sections/Projects.svelte";
-	import Skills from "$lib/components/sections/Skills.svelte";
+	import Skills from "$lib/components/sections/Services.svelte";
   import Header from "../lib/components/sections/Header.svelte";
     import Navbar from '$lib/components/Navbar.svelte';
 </script>
@@ -38,10 +38,6 @@
     @media screen and (max-width: 1000px) {
       display: flex;
       justify-content: center;
-    }
-
-    @media screen and (max-width: 700px) {
-      align-items: flex-start;
     }
   }
 </style>

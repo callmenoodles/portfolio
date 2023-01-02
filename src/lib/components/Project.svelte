@@ -22,7 +22,7 @@
 
 <style lang="scss">
   .project {
-    padding: 15px;
+    padding: 10px;
     height: 195px;
     cursor: pointer;
     transition-duration: 500ms;
@@ -59,5 +59,6 @@
     font-family: 'Rubik';
     color: $lightgrey;
     text-align: center;
+    width: 90%;
   }
 </style>

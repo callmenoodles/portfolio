@@ -50,13 +50,20 @@
 
   .footer-nav {
     text-align: center;
+    width: 500px;
     display: grid;
-    // grid-template-columns: 270px 270px 270px;
-    width: 1000px;
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 
     @media screen and (max-width: 1000px) {
-      width: 95%;
+      width: 90%;
+    }
+
+    a:first-child {
+      text-align: left;
+    }
+
+    a:last-child {
+      text-align: right;
     }
 
     a {

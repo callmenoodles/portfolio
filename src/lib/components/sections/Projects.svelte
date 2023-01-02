@@ -78,7 +78,7 @@
       width: 1200px;
     }
     
-    grid-template-columns: repeat(auto-fill, minmax(360px, 360px));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 340px));
   }
 
   .section-title {
@@ -90,7 +90,7 @@
     width: 100px;
     height: 1px;
     background-color: $primary;
-    margin: 0 0 20px 0;
+    margin: 1px 0 20px 0;
     margin-bottom: 50px;
   }
 </style>
