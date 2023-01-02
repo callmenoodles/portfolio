@@ -23,7 +23,6 @@
 <style lang="scss">
   .project {
     padding: 15px;
-    width: 320px;
     height: 195px;
     cursor: pointer;
     transition-duration: 500ms;

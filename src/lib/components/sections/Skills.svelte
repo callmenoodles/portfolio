@@ -47,44 +47,47 @@
 </script>
 
 <div class="skills">
-  <div class="section-info">
-    <h1 class="section-title">SKILLS</h1>
-    <div class="section-underline"></div>
-    <p class="section-description">
-      I have a wide variety of skills backed by real-world experience and my eagerness to learn, to help you or your business.
-    </p>
-  </div>
-  <div class="skill-container">
-    {#each skills as skill, i}
-    {#if i == 0}
-      <Saos animation={"slide-in-right 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+  <div class="skills-container">
+    <div class="section-info">
+      <h1 class="section-title">SKILLS</h1>
+      <div class="section-underline"></div>
+      <p class="section-description">
+        I have a wide variety of skills backed by real-world experience and my eagerness to learn, to help you or your business.
+      </p>
+    </div>
+    <div class="skill-container">
+      {#each skills as skill, i}
+      {#if i == 0}
+        <Saos animation={"slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+          <Skill
+            title={skill.title}
+            description={skill.description}
+            isHead={i < 3} />
+        </Saos>
+      {:else if i == 2}
+        <Saos animation={"slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+          <Skill
+            title={skill.title}
+            description={skill.description}
+            isHead={i < 3} />
+        </Saos>
+      {:else}
         <Skill
           title={skill.title}
           description={skill.description}
           isHead={i < 3} />
-      </Saos>  
-    {:else if i == 2}
-      <Saos animation={"slide-in-left 0.4s cubic-bezier(0.35, 0.5, 0.65, 0.95) both"}>
+      {/if}
+      {/each}
+    </div>
+
+    <div class="subskill-container">
+      {#each subskills as skill}
         <Skill
           title={skill.title}
-          description={skill.description}
-          isHead={i < 3} />
-      </Saos>
-    {:else}
-      <Skill
-        title={skill.title}
-        description={skill.description}
-        isHead={i < 3} />
-    {/if}
-    {/each}
-  </div>
-  <div class="subskill-container">
-    {#each subskills as skill}  
-      <Skill 
-        title={skill.title}
-        description={""}
-        isHead={false} />
-    {/each}
+          description={""}
+          isHead={false} />
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -124,6 +127,18 @@
     margin-bottom: 250px;
   }
 
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 935px;
+
+    @media screen and (max-width: 1000px) {
+      width: 90%;
+    }
+  }
+
   .section-info {
     margin-bottom: 50px;
     display: flex;
@@ -139,6 +154,10 @@
       color: $lightgrey;
       width: 500px;
       text-align: center;
+
+      @media screen and (max-width: 1000px) {
+        width: 90%;
+      }
     }
   }
 
@@ -146,10 +165,15 @@
     display: grid;
     grid-template-columns: 300px 300px 300px;
     gap: 16px;
+    width: 100%;
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
   }
 
   .subskill-container {
-    width: 932px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 16px; 

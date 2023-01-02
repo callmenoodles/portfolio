@@ -54,12 +54,18 @@
   .project-container {
     display: grid;
     gap: 16px;
-    grid-template-rows: auto auto;
-    grid-template-columns: auto auto auto;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    align-content: center;
+    justify-content: center;
+
+    @media screen and (max-width: 1250px) {
+      width: 95%;
+    }
+
+    @media screen and (min-width: 1250px) {
+      width: 1200px;
+    }
+    
+    grid-template-columns: repeat(auto-fill, minmax(360px, 360px));
   }
 
   .section-title {

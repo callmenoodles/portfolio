@@ -10,7 +10,7 @@
 <div>
   <Navbar />
   
-  <div class="section header" use:scrollRef={'header'}>
+  <div class="section sec-header" use:scrollRef={'header'}>
     <Header />
   </div>
   <div class="section" use:scrollRef={'skills'}>
@@ -32,7 +32,16 @@
     align-items: center;
   }
 
-  .header {
+  .sec-header {
     height: 100vh;
+
+    @media screen and (max-width: 1000px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 700px) {
+      align-items: flex-start;
+    }
   }
 </style>

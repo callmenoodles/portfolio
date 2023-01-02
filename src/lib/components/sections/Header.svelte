@@ -7,8 +7,7 @@
     "WEBSITES",
     "WEB APPS",
     "VIDEO GAMES",
-    "MOBILE APPS",
-    "DESIGNS"
+    "MOBILE APPS"
   ]
 </script>
 
@@ -43,9 +42,20 @@
   .header {
     display: flex;
     flex-direction: column;
-    
+    width: 500px;
     position: relative;
     left: 20vw;
+
+    @media screen and (max-width: 1000px) {
+      position: initial;
+    }
+
+    @media screen and (max-width: 700px) {
+      left: 0;
+      width: 75%;
+      position: relative;
+      top: 30vh;
+    }
   }
 
   .text-intro {
@@ -53,22 +63,51 @@
     color: #707070;
     font-size: 1.2em;
     font-family: 'Rubik';
+
+    @media screen and (max-width: 1000px) {
+      font-size: 1.1em;
+    }
+
+    @media screen and (max-width: 700px) {
+      // font-size: 1.0em;
+    }
   }
 
   .text-title {
     margin: 0;
     font-size: 5em;
     font-weight: bold;
+    line-height: 100px;
     position: relative;
-    left: -3px;
+    left: -4px;
+    white-space: nowrap;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 4em;
+      line-height: 80px;
+    }
+
+    @media screen and (max-width: 700px) {
+      font-size: 2.8em;
+      line-height: 60px;
+      left: -1px;
+    }
   }
 
   .text-description {
     margin: 0 0;
     font-size: 1.2em;
     color: $lightgrey;
-    width: 500px;
+    width: 100%;
     font-family: 'Rubik';
+
+    @media screen and (max-width: 1000px) {
+      font-size: 1.1em;
+    }
+
+    @media screen and (max-width: 700px) {
+      // font-size: 1.0em;
+    }
   }
 
   .social {
@@ -86,6 +125,14 @@
 
   .typedjs-container {
     height: 100px;
+
+    @media screen and (max-width: 1000px) {
+      height: 80px;
+    }
+
+    @media screen and (max-width: 700px) {
+      height: 60px;
+    }
   }
 
   a {

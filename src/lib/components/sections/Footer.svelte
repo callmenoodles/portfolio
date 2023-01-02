@@ -51,9 +51,14 @@
   .footer-nav {
     text-align: center;
     display: grid;
-    grid-template-columns: 270px 270px 270px;
-    grid-template-rows: auto;
-    
+    // grid-template-columns: 270px 270px 270px;
+    width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+
+    @media screen and (max-width: 1000px) {
+      width: 95%;
+    }
+
     a {
       padding: 8px;
       text-decoration: none;
@@ -89,5 +94,6 @@
     margin: 0 0 20px 0;
     font-family: 'Rubik';
     font-size: 1.1em;
+    text-align: center;
   }
 </style>

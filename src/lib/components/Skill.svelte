@@ -17,6 +17,8 @@
   .headskill {
     height: 180px;
     border: 1px solid #505050;
+    width: 100%;
+    min-width: 300px;
   }
 
   .subskill {
@@ -47,6 +49,7 @@
     margin: 5px 0;
     font-family: 'Rubik';
     font-size: 1.2em;
+    text-align: center;
   }
 
   .skill-description {
