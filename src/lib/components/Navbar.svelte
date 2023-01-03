@@ -4,17 +4,17 @@
   import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
   import IoMdClose from 'svelte-icons/io/IoMdClose.svelte';
   const logo = '../../images/noodles.png';
-  import { enableScroll, disableScroll } from 'ts-scroll-lock';
+  // import { enableScroll, disableScroll } from 'ts-scroll-lock';
 
   let isOpen = false;
 
   function toggleMenu() {
     if (isOpen) {
-      enableScroll();
+      // enableScroll();
       isOpen = false;
     } else {
       isOpen = true;
-      disableScroll();
+      // disableScroll();
     }
   }
 
