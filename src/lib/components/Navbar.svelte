@@ -1,26 +1,28 @@
 <script lang="ts">
   import { animateScroll } from 'svelte-scrollto-element';
+  import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
   import { expoOut } from 'svelte/easing';
   import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
   import IoMdClose from 'svelte-icons/io/IoMdClose.svelte';
+  import { afterUpdate, onMount } from 'svelte';
   const logo = '../../images/noodles.png';
-  // import { enableScroll, disableScroll } from 'ts-scroll-lock';
 
   let isOpen = false;
 
   function toggleMenu() {
     if (isOpen) {
-      // enableScroll();
       isOpen = false;
     } else {
       isOpen = true;
-      // disableScroll();
     }
   }
 
-  animateScroll.setGlobalOptions({
-    duration: 1000,
-    easing: expoOut
+  afterUpdate(() => {
+    if (isOpen) {
+      disableBodyScroll(document);
+    } else {
+      enableBodyScroll(document);
+    }
   });
 </script>
 
@@ -31,13 +33,17 @@
     </a>
 
     <nav class="navigation">
-      <a on:click={() => animateScroll.scrollTo({ element: '#sec-services', offset: -100 })}
+      <a
+        on:click={() =>
+          animateScroll.scrollTo({ element: '#sec-services', offset: -100, easing: expoOut })}
         >SERVICES</a
       >
-      <a on:click={() => animateScroll.scrollTo({ element: '#sec-projects', offset: -100 })}
+      <a
+        on:click={() =>
+          animateScroll.scrollTo({ element: '#sec-projects', offset: -100, easing: expoOut })}
         >PROJECTS</a
       >
-      <a on:click={() => animateScroll.scrollToBottom()}>CONTACT</a>
+      <a on:click={() => animateScroll.scrollToBottom({ easing: expoOut })}>CONTACT</a>
     </nav>
 
     <div class="icon" on:click={toggleMenu}>
@@ -49,12 +55,14 @@
     </div>
   </div>
 
-  <div class={`overlay ${isOpen ? 'visible' : ''}`}>
+  <div class={`overlay ${isOpen ? 'visible' : ''}`} id="overlay">
     <nav class="mobile-navigation">
       <a
         on:click={() => {
           toggleMenu();
-          animateScroll.scrollToTop();
+          animateScroll.scrollToTop({
+            easing: expoOut
+          });
         }}
       >
         INTRO
@@ -64,7 +72,8 @@
           toggleMenu();
           animateScroll.scrollTo({
             element: '#sec-services',
-            offset: -25
+            offset: -25,
+            easing: expoOut
           });
         }}
       >
@@ -75,7 +84,8 @@
           toggleMenu();
           animateScroll.scrollTo({
             element: '#sec-projects',
-            offset: -25
+            offset: -25,
+            easing: expoOut
           });
         }}
       >
