@@ -1,10 +1,10 @@
 <script lang="ts">
   import { animateScroll } from 'svelte-scrollto-element';
-  import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+  import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
   import { expoOut } from 'svelte/easing';
   import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
   import IoMdClose from 'svelte-icons/io/IoMdClose.svelte';
-  import { afterUpdate, onMount } from 'svelte';
+  import { afterUpdate } from 'svelte';
   const logo = '../../images/noodles.png';
 
   let isOpen = false;
