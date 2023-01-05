@@ -11,14 +11,11 @@
 <div class="footer">
   <a class="btn-contact" href="mailto:support@noodles.services">INTERESTED?</a>
   <nav class="footer-nav">
-    <!-- svelte-ignore a11y-missing-attribute -->
     <a on:click={() => animateScroll.scrollToTop()}>INTRO</a>
-    <!-- svelte-ignore a11y-missing-attribute -->
-    <a on:click={() => animateScroll.scrollTo({ element: '#sec-services', offset: -100 })}
+    <a on:click={() => animateScroll.scrollTo({ element: '#sec-services', offset: -50 })}
       >SERVICES</a
     >
-    <!-- svelte-ignore a11y-missing-attribute -->
-    <a on:click={() => animateScroll.scrollTo({ element: '#sec-projects', offset: -100 })}
+    <a on:click={() => animateScroll.scrollTo({ element: '#sec-projects', offset: -50 })}
       >PROJECTS</a
     >
   </nav>

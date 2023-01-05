@@ -60,16 +60,6 @@
       <a
         on:click={() => {
           toggleMenu();
-          animateScroll.scrollToTop({
-            easing: expoOut
-          });
-        }}
-      >
-        INTRO
-      </a>
-      <a
-        on:click={() => {
-          toggleMenu();
           animateScroll.scrollTo({
             element: '#sec-services',
             offset: -25,
@@ -90,6 +80,16 @@
         }}
       >
         PROJECTS
+      </a>
+      <a
+        on:click={() => {
+          toggleMenu();
+          animateScroll.scrollToBottom({
+            easing: expoOut
+          });
+        }}
+      >
+        CONTACT
       </a>
     </nav>
   </div>
