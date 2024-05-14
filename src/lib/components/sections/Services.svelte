@@ -2,8 +2,6 @@
   import Skill from '../Skill.svelte';
   import Service from '../Service.svelte';
   import Saos from 'saos';
-  import { pb } from '../../../pocketbase';
-  import { onMount } from 'svelte';
 
   interface Service {
     title: string;
@@ -16,37 +14,6 @@
 
   let services: Array<Service> = [];
   let skills: Array<Skill> = [];
-
-  onMount(async () => {
-    services = await fetchServices();
-    skills = await fetchSkills();
-  });
-
-  async function fetchServices() {
-    let res = await pb.collection('services').getFullList();
-
-    let services = res.map((service) => {
-      return {
-        name: service.name,
-        description: service.description
-      } as unknown as Service;
-    }) as Array<Service>;
-
-    return services;
-  }
-
-  async function fetchSkills() {
-    let res = await pb.collection('skills').getFullList();
-
-    let skills = res.map((skill) => {
-      return {
-        name: skill.name,
-        description: skill.description
-      } as unknown as Skill;
-    }) as Array<Skill>;
-
-    return skills;
-  }
 </script>
 
 <div class="skills">
@@ -63,21 +30,21 @@
       {#each services as service, i}
         {#if i == 0}
           <Saos animation={'slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-            <Service title={service.name} description={service.description} />
+            <Service title={service.title} description={service.description} />
           </Saos>
         {:else if i == 2}
           <Saos animation={'slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-            <Service title={service.name} description={service.description} />
+            <Service title={service.title} description={service.description} />
           </Saos>
         {:else}
-          <Service title={service.name} description={service.description} />
+          <Service title={service.title} description={service.description} />
         {/if}
       {/each}
     </div>
 
     <div class="subskill-container">
       {#each skills as skill}
-        <Skill title={skill.name} />
+        <Skill title={skill.title} />
       {/each}
     </div>
   </div>
