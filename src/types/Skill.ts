@@ -1,3 +1,0 @@
-interface ISkill {
-  title: string;
-}

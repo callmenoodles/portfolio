@@ -10,25 +10,25 @@
       title="IndivUniek"
       description="Redesigned website for a psychologist/sexologist."
       url="noodles.services"
-      tools={["React"]}
+      tools={["WordPress"]}
     />
     <Project
       title="Minite"
       description="Freelance platform tailored to students."
       url="noodles.services"
-      tools={["React"]}
+      tools={["Next.js"]}
     />
     <Project
       title="Werkloopt"
       description="Consultancy website te help people feel healthy using therapy."
       url="noodles.services"
-      tools={["React"]}
+      tools={["SvelteKit"]}
     />
     <Project
       title="Noodles Translation"
       description="Quick and accurate English and native Dutch translation and copywriting."
       url="noodles.services"
-      tools={["React"]}
+      tools={["Next.js"]}
     />
     <Project
       title="Mag Ik Dit Delen?"
@@ -40,7 +40,7 @@
       title="Cadens"
       description="I worked on an educational tool for dentistry students."
       url="noodles.services"
-      tools={["React"]}
+      tools={["Next.js"]}
     />
   </div>
 </div>
