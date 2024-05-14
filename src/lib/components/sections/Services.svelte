@@ -1,19 +1,7 @@
-<script lang="ts">
-  import Skill from '../Skill.svelte';
-  import Service from '../Service.svelte';
+<script>
+  import Service from '$lib/components/Service.svelte';
+  import Skill from '$lib/components/Skill.svelte';
   import Saos from 'saos';
-
-  interface Service {
-    title: string;
-    description: string;
-  }
-
-  interface Skill {
-    title: string;
-  }
-
-  let services: Array<Service> = [];
-  let skills: Array<Skill> = [];
 </script>
 
 <div class="skills">
@@ -27,25 +15,44 @@
       </p>
     </div>
     <div class="skill-container">
-      {#each services as service, i}
-        {#if i == 0}
-          <Saos animation={'slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-            <Service title={service.title} description={service.description} />
-          </Saos>
-        {:else if i == 2}
-          <Saos animation={'slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-            <Service title={service.title} description={service.description} />
-          </Saos>
-        {:else}
-          <Service title={service.title} description={service.description} />
-        {/if}
-      {/each}
+      <Saos animation={'slide-in-right 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+        <Service 
+          title="Web Development" 
+          description="I have 5+ years of experience developing web applications both as a hobby and professionaly." 
+        />
+      </Saos>
+      
+      <Service
+        title="Consultancy"
+        description="I have worked with several clients in various industries to help them resolve software related issues."
+      />
+      
+      <Saos animation={'slide-in-left 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
+        <Service
+          title="Localization"
+          description="Apart from developing software, I translate and proofread a wide variety of documents from English to Dutch and vice versa."
+        />
+      </Saos>
     </div>
 
     <div class="subskill-container">
-      {#each skills as skill}
-        <Skill title={skill.title} />
-      {/each}
+      <Skill title="Next.js" />
+      <Skill title="React" />
+      <Skill title="SvelteKit" />
+      <Skill title="Node.js" />
+      <Skill title="Figma" />
+      <Skill title="Git" />
+      <Skill title="SQL" />
+      <Skill title="NoSQL" />
+      <Skill title="Linux" />
+      <Skill title="C" />
+      <Skill title="C++" />
+      <Skill title="Hosting" />
+      <Skill title="TypeScript" />
+      <Skill title="Flutter" />
+      <Skill title="Python" />
+      <Skill title="Go" />
+      <Skill title="MATLAB" />
     </div>
   </div>
 </div>

@@ -1,24 +1,47 @@
-<script lang="ts">
-  import Project from '../Project.svelte';
-  import Saos from 'saos';
-
-  export let projects: Array<Project>;
+<script>
+  import Project from '$lib/components/Project.svelte';
 </script>
 
 <div class="projects">
   <h1 class="section-title">PROJECTS</h1>
   <div class="section-underline" />
   <div class="project-container">
-    {#each projects as project}
-      <Saos animation={'scale-in-center 0.3s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}>
-        <Project
-          title={project.name}
-          description={project.description}
-          url={project.url}
-          tools={project.tools}
-        />
-      </Saos>
-    {/each}
+    <Project
+      title="IndivUniek"
+      description="Redesigned website for a psychologist/sexologist."
+      url="noodles.services"
+      tools={["React"]}
+    />
+    <Project
+      title="Minite"
+      description="Freelance platform tailored to students."
+      url="noodles.services"
+      tools={["React"]}
+    />
+    <Project
+      title="Werkloopt"
+      description="Consultancy website te help people feel healthy using therapy."
+      url="noodles.services"
+      tools={["React"]}
+    />
+    <Project
+      title="Noodles Translation"
+      description="Quick and accurate English and native Dutch translation and copywriting."
+      url="noodles.services"
+      tools={["React"]}
+    />
+    <Project
+      title="Mag Ik Dit Delen?"
+      description="Tool for quickly determining whether data sharing is GDPR compliant."
+      url="noodles.services"
+      tools={["React"]}
+    />
+    <Project
+      title="Cadens"
+      description="I worked on an educational tool for dentistry students."
+      url="noodles.services"
+      tools={["React"]}
+    />
   </div>
 </div>
 

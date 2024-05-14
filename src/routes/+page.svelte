@@ -4,10 +4,6 @@
   import Services from '$lib/components/sections/Services.svelte';
   import Header from '../lib/components/sections/Header.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
-  /** @type {import('./$types').PageData} */
-  export let data;
-  const { projects, services, skills } = data;
 </script>
 
 <div>
@@ -17,10 +13,10 @@
     <Header />
   </div>
   <div class="section" id="sec-services">
-    <Services {services} {skills} />
+    <Services />
   </div>
   <div class="section" id="sec-projects">
-    <Projects {projects} />
+    <Projects />
   </div>
   <div class="section">
     <Footer />

@@ -1,3 +1,3 @@
-interface Skill {
+interface ISkill {
   title: string;
 }
