@@ -3,7 +3,12 @@
   import IoLogoGithub from 'svelte-icons/io/IoLogoGithub.svelte';
   import TypedJs from '@loscrackitos/svelte-typed-js';
 
-  let titles = ['WEBSITES', 'WEB APPS', 'VIDEO GAMES', 'MOBILE APPS'];
+  let titles = [
+    'WEBSITES',
+    'WEB APPS',
+    'VIDEO GAMES',
+    'MOBILE APPS'
+  ];
 </script>
 
 <div class="header">
