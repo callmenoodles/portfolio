@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.0",
+  "version": "2022v3",
   "private": true,
   "scripts": {
     "dev": "vite dev",
