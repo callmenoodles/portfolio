@@ -9,37 +9,37 @@
     <Project
       title="IndivUniek"
       description="Redesigned website for a psychologist/sexologist."
-      url="noodles.services"
+      url="https://indivuniek.nl"
       tools={["WordPress"]}
     />
     <Project
       title="Minite"
       description="Freelance platform tailored to students."
-      url="noodles.services"
+      url="https://app.minite.works"
       tools={["Next.js"]}
     />
     <Project
       title="Werkloopt"
       description="Consultancy website te help people feel healthy using therapy."
-      url="noodles.services"
+      url="https://werkloopt.nl"
       tools={["SvelteKit"]}
     />
     <Project
       title="Noodles Translation"
       description="Quick and accurate English and native Dutch translation and copywriting."
-      url="noodles.services"
+      url="https://translation.noodles.services"
       tools={["Next.js"]}
     />
     <Project
       title="Mag Ik Dit Delen?"
       description="Tool for quickly determining whether data sharing is GDPR compliant."
-      url="noodles.services"
+      url="https://magikditdelen.nl"
       tools={["React"]}
     />
     <Project
       title="Cadens"
       description="I worked on an educational tool for dentistry students."
-      url="noodles.services"
+      url="https://acta.nl"
       tools={["Next.js"]}
     />
   </div>
